@@ -1,0 +1,44 @@
+<ion-view view-title="Articles" class="main-back">
+    <ion-content>
+
+        <!-- <center ng-show="">
+            <div class="item item card" style="font-weight: bold;height: 70px; font-size: 20px;">
+                <br/>
+                    <i class="icon ion-sad"></i>
+                    No Posts Found.
+                <br/>
+            </div>
+        </center> -->
+
+        <div class="list card" ng-repeat="post in posts" ng-show="data_fetched">
+
+          <div class="item item-avatar">
+            <img ng-src="{{pInfo.picture.data.url}}">
+            <h2 ng-bind="pInfo.name">Mohammed Sufyan</h2>
+            <p ng-bind="post.created_time | date:'medium'">November 05, 1955</p>
+          </div>
+
+          <div class="item item-body">
+            <img class="full-image" ng-src="{{post.full_picture}}">
+            <p ng-bind-html="post.message | linky">
+              This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+              the content is from a card-body consisting of an image and paragraph text. The footer
+              consists of tabs, icons aligned left, within the card-footer.
+            </p>
+            <p>
+              <a class="subdued" ng-if="post.likes.data.length < 99">{{post.likes.data.length}} Likes</a>
+              <a class="subdued" ng-if="post.likes.data.length >= 99">99+ Likes</a>
+              <!-- <a class="subdued">5 Comments</a> -->
+            </p>
+          </div>
+
+        </div>
+
+        <ion-infinite-scroll
+          on-infinite="loadMorePost()"
+          class="spinner_loadmore"
+          ng-if="more_posts && data_fetched"
+          distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

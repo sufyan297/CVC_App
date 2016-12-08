@@ -1,0 +1,36 @@
+<ion-view view-title="Events" class="main-back">
+
+
+    <ion-content>
+        <div class="list card" ng-repeat="event in events" ng-show="data_fetched">
+
+          <div class="item item-text-wrap">
+            <!-- <img ng-src="../img/event_ico.png" style="border-radius: 0px;"> -->
+
+            <h2 ng-bind="event.Event.title">Event Title</h2>
+            <!-- <p am-time-ago="event.Event.created | amDateFormat:'DD-MM-YYYY HH:mm:ss'">1 hour ago</p> -->
+            <p>{{event.Event.created | asDate | date: 'medium'}}</p>            <!-- amDateFormat: 'DD-MM-YYYY HH:mm:ss' -->
+          </div>
+<!-- 29/07/1993 08:20:24 -->
+          <div class="item item-image" ng-if="event.Event.image_dir != ''">
+            <img ng-src="{{img_url}}/image_file/{{event.Event.image_dir}}/api_{{event.Event.image_file}}">
+          </div>
+
+          <div class="item item-text-wrap" >
+              <pre ng-bind-html="event.Event.description | linky">
+                  Event Description Event DescriptionEvent DescriptionEvent DescriptionEvent DescriptionEvent DescriptionEvent Description
+              </pre>
+
+          </div>
+        </div>
+
+        <center ng-show="no_event">
+            <div class="item item card" style="font-weight: bold;height: 70px; font-size: 20px;">
+                <br/>
+                    <i class="icon ion-sad"></i>
+                    No Events Found.
+                <br/>
+            </div>
+        </center>
+    </ion-content>
+</ion-view>

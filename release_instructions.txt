@@ -1,0 +1,24 @@
+
+Build
+----------------------------------
+ionic build android --release
+
+
+Copy
+------------------------------------
+cp platforms/android/build/outputs/apk/android-release-unsigned.apk release/android-release-unsigned.apk
+
+
+
+Key Info (one time)
+------------------------
+keytool -genkey -v -keystore com.sufyan.changevadodara.release.keystore -alias com.sufyan.changevadodara -keyalg RSA -keysize 2048 -validity 10000
+
+keystore & keypassword: changevadodara
+
+
+Jarsigning
+------------------------------
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore com.sufyan.changevadodara.release.keystore release/android-release-unsigned.apk com.sufyan.changevadodara
+
+./zipalign -v 4 release/android-release-unsigned.apk release/CVC_RELEASE_1.0.5.apk
