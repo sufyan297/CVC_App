@@ -33,7 +33,11 @@
           </div>
 
         </div>
-
+        <center>
+            <div ng-if="went_wrong === true">
+                <b>Oops! Something went wrong.</b>
+            </div>
+        </center>
         <ion-infinite-scroll
           on-infinite="loadMorePost()"
           class="spinner_loadmore"
