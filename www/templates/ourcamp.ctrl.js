@@ -8,6 +8,7 @@
         var latLng = new google.maps.LatLng(22.3088325, 73.1418363); //Samta
         var latLng2 = new google.maps.LatLng(22.322102, 73.1327393); //Gotri
         var latLng3 = new google.maps.LatLng(22.2987019,73.2445035); //Waghodia
+        var latLng4 = new google.maps.LatLng(22.2779505,73.1896858); //CVC School Manjalpur
 
         var mapOptions = {
           center: latLng,
@@ -43,16 +44,27 @@
               label: 'W',
               title: 'Waghodia'
           });
+		  var marker4 = new google.maps.Marker({
+		  	map: $scope.map,
+		  	animation: google.maps.Animation.DROP,
+		  	position: latLng4,
+		  	label: 'M',
+		  	title: 'Manjalpur'
+		  });
 
           var infoWindow = new google.maps.InfoWindow({
-              content: "CVC Eduction School, Samta"
+              content: "CVC Education School, Samta"
           });
           var infoWindow2 = new google.maps.InfoWindow({
-              content: "CVC Eduction School, Gotri"
+              content: "CVC Education School, Gotri"
           });
           var infoWindow3 = new google.maps.InfoWindow({
-              content: "CVC Eduction School, Waghodia"
+              content: "CVC Education School, Waghodia"
           });
+
+		  var infoWindow4 = new google.maps.InfoWindow({
+			  content: "CVC Education School, Manjalpur"
+		  });
 
           google.maps.event.addListener(marker, 'click', function () {
               infoWindow.open($scope.map, marker);
@@ -63,8 +75,21 @@
           google.maps.event.addListener(marker3, 'click', function () {
               infoWindow3.open($scope.map, marker3);
           });
+		  google.maps.event.addListener(marker3, 'click', function () {
+			  infoWindow4.open($scope.map, marker4);
+		  });
 
         });
 
+		//
+		// function addMarker(_marker,map,pos,title,label) {
+		// 	_marker = new google.maps.Marker({
+        //         map: map,
+        //         animation: google.maps.Animation.DROP,
+        //         position: pos,
+        //         label: label,
+        //         title: title
+        //     });
+		// }
     });
 })();

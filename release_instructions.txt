@@ -21,4 +21,4 @@ Jarsigning
 ------------------------------
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore com.sufyan.changevadodara.release.keystore release/android-release-unsigned.apk com.sufyan.changevadodara
 
-./zipalign -v 4 release/android-release-unsigned.apk release/CVC_RELEASE_1.0.6.apk
+./zipalign -v 4 release/android-release-unsigned.apk release/CVC_RELEASE_1.0.7.apk
