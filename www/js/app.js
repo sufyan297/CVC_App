@@ -185,6 +185,6 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
 app.constant('REST_BASE_URL','http://sufyan.co.in/cvc/api/');
 app.constant('FILE_BASE_URL','http://sufyan.co.in/cvc/app/webroot/files/');
-app.constant('APP_VERSION','1.0.6');
+app.constant('APP_VERSION','1.0.8');
 app.constant('ACCESS_TOKEN','EAACBSsPOPNEBAFXHUd9C9vfeebm9nZBQhtvyfLNgMlpKhuxLIy1K3edNCco0WyLtetfBJ5bUQD3uhR3fZCfMMxTXevVbkmAxZB52U5Tr3Ppixqe8PkfX97A8Med4298FYJbJ7Y5OrOiI60JuieyAZCZAQ5uE8rpwZD');
 // app.constant('ACCESS_TOKEN','EAACBSsPOPNEBAGKj6FO1bjsqRfPN0U4QOC6vkG9hjYqjvsVNqZCC6IaZCRwGgJZCzIzCzhkogzZBmPiyOc0ymsD11yyigvbjzZCxwt8PitjOx4TVZCSwZBNtvMMg9ZA50Fq7z7HdFkVpujXSiEBZCfT0Gud6WOpKhRioZD');

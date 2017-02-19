@@ -75,7 +75,7 @@
           google.maps.event.addListener(marker3, 'click', function () {
               infoWindow3.open($scope.map, marker3);
           });
-		  google.maps.event.addListener(marker3, 'click', function () {
+		  google.maps.event.addListener(marker4, 'click', function () {
 			  infoWindow4.open($scope.map, marker4);
 		  });
 
